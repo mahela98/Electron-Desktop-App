@@ -1,0 +1,14 @@
+{
+  "name": "app01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "EACM Siriwardana",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^12.0.2"
+  }
+}
