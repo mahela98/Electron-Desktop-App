@@ -2,10 +2,10 @@
 
 * Install all packages using 'npm install'
 * To start  -  npm start
-* To package - 
-        - Windows - npm run package-win
-        - Mac - npm run package-mac
-        - Linux - npm run package-linux
+* To package -  </br>
+        - Windows - npm run package-win </br>
+        - Mac - npm run package-mac  </br>
+        - Linux - npm run package-linux  </br>  </br>
 
 
 
