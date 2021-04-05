@@ -11,8 +11,10 @@ const {
 let mainWindow;
 let addWindow;
 
-// listen for app to be ready
+//set ENV
+process.env.NODE_ENV ='production';
 
+// listen for app to be ready
 app.on('ready', function () {
     //create main window
     mainWindow = new BrowserWindow({ 
