@@ -5,7 +5,8 @@ const path = require('path');
 const {
     app,
     BrowserWindow,
-    Menu
+    Menu,
+    ipcMain
 } = electron;
 let mainWindow;
 let addWindow;
@@ -14,7 +15,13 @@ let addWindow;
 
 app.on('ready', function () {
     //create main window
-    mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({ 
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false
+            // fixed the issue
+        }
+    });
     //load html in to window
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'mainWindow.html'),
@@ -57,6 +64,15 @@ function createAddWindow() {
         addWindow = null;
     });
 }
+
+
+//catch item add
+ipcMain.on('item:add',function(e,item){
+// console.log(item);
+    mainWindow.webContents.send('item:add',item);
+addWindow.close();
+
+});
 
 
 //manu template
